@@ -1,0 +1,40 @@
+body{
+    background-color: rgba(72, 76, 117, 0.629);
+}
+
+.main{
+    border: 5px solid rgb(126, 183, 153);
+    background-color: rgb(122, 125, 152);
+}
+
+.versions{
+    border: 5px solid rgb(126, 183, 153);
+    background-color: rgb(122, 125, 152);
+}
+
+.form{
+    border: 5px solid rgb(126, 183, 153);
+    background-color: rgb(122, 125, 152);
+}
+
+input{
+    width: 300px;
+    padding: 10px;
+}
+
+img:hover{
+    border: 2px solid rgb(16, 45, 108);
+}
+
+.buttonapply{
+    padding: 20px;
+    width: 150px;
+    display: flex;
+    margin: 0 auto;
+    gap: 100px;
+    background-color: red;
+}
+
+.buttonapply:hover{
+    background-color: green;
+}
