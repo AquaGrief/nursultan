@@ -1,40 +1,267 @@
-body{
-    background-color: rgba(72, 76, 117, 0.629);
+/* Общий фон и шрифт */
+body {
+    background-color: #f0f8ff; /* светло-голубой, мягкий фон */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Хедер и футер */
+.header-box, .footer-box {
+    background-color: #1f2937; /* тёмно-серый */
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+nav {
+    display: flex;
+    gap: 60px;
+}
+
+.navigation {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navigation:hover {
+    color: #60a5fa; /* светло-голубой при наведении */
+}
+
+/* Основной контент */
+main {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Секция плюсов */
+.plusi {
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.plusi h1, .plusi h2 {
+    color: #1e40af; /* глубокий синий */
+    margin: 0;
+}
+
+.plusi ul {
+    padding-left: 20px;
+}
+
+.plusi li {
+    color: #1f2937;
+    line-height: 1.6;
+}
+
+/* Адаптивность */
+@media (max-width: 600px) {
+    nav {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .navigation {
+        font-size: 16px;
+    }
+
+    .plusi {
+        padding: 20px;
+    }
 }
 
 .main{
-    border: 5px solid rgb(126, 183, 153);
-    background-color: rgb(122, 125, 152);
-}
-
-.versions{
-    border: 5px solid rgb(126, 183, 153);
-    background-color: rgb(122, 125, 152);
-}
-
-.form{
-    border: 5px solid rgb(126, 183, 153);
-    background-color: rgb(122, 125, 152);
-}
-
-input{
-    width: 300px;
-    padding: 10px;
-}
-
-img:hover{
-    border: 2px solid rgb(16, 45, 108);
-}
-
-.buttonapply{
-    padding: 20px;
-    width: 150px;
     display: flex;
-    margin: 0 auto;
-    gap: 100px;
-    background-color: red;
+    align-items: flex-start;
 }
 
-.buttonapply:hover{
-    background-color: green;
+/* Плавная прокрутка */
+html {
+    scroll-behavior: smooth;
 }
+
+/* Блок с ценами */
+.prices-section {
+    padding: 40px;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.price-cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.price-card {
+    background-color: #f0f4f8;
+    border-radius: 16px;
+    padding: 20px;
+    width: 250px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.price-card:hover {
+    transform: translateY(-5px);
+}
+
+.price-card h3 {
+    color: #1b4f72;
+    margin-bottom: 10px;
+}
+
+.price-card p {
+    font-size: 22px;
+    color: #333;
+    margin: 0 0 15px 0;
+}
+
+.price-card ul {
+    list-style: none;
+    padding: 0;
+    color: #555;
+}
+
+/* Кнопка "Наверх" */
+#scrollTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: #1b4f72;
+    color: white;
+    cursor: pointer;
+    padding: 12px 16px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+#scrollTopBtn:hover {
+    background-color: #145a86;
+}
+
+body.dark-theme {
+    background-color: #1a1a1a;
+    color: #f5e6c8; /* весь основной текст */
+}
+
+body.dark-theme h1,
+body.dark-theme h2,
+body.dark-theme p,
+body.dark-theme li,
+body.dark-theme strong {
+    color: #f5e6c8;
+}
+
+body.dark-theme .header-box,
+body.dark-theme .plusi,
+body.dark-theme .prices-section {
+    background-color: #2a2a2a;
+}
+
+body.dark-theme .navigation {
+    color: #d6d6d6; /* ссылки можно оставить светло-серыми */
+}
+
+body.dark-theme .price-card {
+    background-color: #3a3a3a;
+    color: #f5e6c8;
+}
+
+body.dark-theme #scrollTopBtn {
+    background-color: #444;
+}
+
+/* Кнопка смены темы */
+#themeToggleBtn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #ffffff;
+    color: #111;
+    border: none;
+    padding: 10px 14px;
+    font-size: 18px;
+    border-radius: 12px;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    transition: background 0.3s ease;
+}
+
+#themeToggleBtn:hover {
+    background-color: #e0e0e0;
+}
+
+/* Темная тема */
+body.dark-theme {
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+}
+
+body.dark-theme .header-box,
+body.dark-theme .plusi,
+body.dark-theme .prices-section {
+    background-color: #2a2a2a;
+}
+
+body.dark-theme .navigation {
+    color: #f0f0f0;
+}
+
+body.dark-theme .price-card {
+    background-color: #3a3a3a;
+    color: #f0f0f0;
+}
+
+body.dark-theme #scrollTopBtn {
+    background-color: #444;
+}
+
+.button-container {
+    display: flex; /* Включаем flexbox */
+    justify-content: center; /* Центрируем по горизонтали */
+    align-items: center; /* Центрируем по вертикали */
+    height: 50vh; /* Задаём высоту контейнера на весь экран (для центрирования по вертикали) */
+}
+
+.telegram-button {
+    display: inline-block;
+    background-color: #0088cc;
+    color: white;
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 30px;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.telegram-button:hover {
+    background-color: #0077b5;
+    transform: scale(1.05);
+}
+
+.telegram-button:active {
+    background-color: #005c87;
+    transform: scale(0.98);
+}
+
