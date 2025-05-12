@@ -1,33 +1,75 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>nursultan - чит для майнкрафта</title>
+    <title>Сайты на заказ</title>
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <section class="main">
-    <h1>nursultan - это - чит-клиент для майнкрафт версии 1.16.5/1.12.2, это один из самых популярных чит-клиентов в комьюнити читеров.</h1>
-    <img src="https://forum-minecraft.ru/data/xfmg/poster/0/1-15d4733b6a72b8c8bf782ac7b064a008.jpg?1728812150" alt="nursultan">
-    <h2>вот так выглядит меню клиента (место для его настройки)</h2>
-    </section>
+    <header class="header-box">
+        <nav>
+            <a href="" class="navigation">Главная</a>
+            <a href="" class="navigation">Тех-поддержка</a>
+            <a href="" class="navigation">Связь с разработчиком</a>
+            <a href="" class="navigation">Заказать сайт</a>
+        </nav>
+    </header>
+    <button id="themeToggleBtn" title="Переключить тему">🌙</button>
 
-    <section class="versions">
-    <img src="https://sun1-91.userapi.com/5EiyYascqLSCdUVUK-CEpJdJEXL3HaZ6OU9Nhw/DO9EOhlpQps.jpg" alt="nursultan" width="500px">
-    <p>есть 3 версии клиента - nextgen, alpha, premium. а приобрести этот клиент можно на сайте <a target="_blank" href="https://nursultan.fun/">nursultan.fun</a></p>
-    </section>
+    <main>
+        <section class="plusi">
+            <h2>Наши плюсы:</h2>
+            <ul>
+                <li><strong>Низкие цены и доступность:</strong> Цены на наши сайты очень доступные, заказать сайт может почти каждый. Стоимость зависит от вашего желания и наполнения веб-сайта.</li>
+                <li><strong>Индивидуальный дизайн:</strong> Мы создаём уникальные дизайны, которые вы не встретите больше нигде.</li>
+                <li><strong>Поддержка почти 24/7:</strong> Отзывчивая и быстрая поддержка, особенно в дневное время. Если вопрос чёткий — вы получите точный и оперативный ответ.</li>
+            </ul>
+        </section>
+    </main>
+<!-- Секция с ценами -->
+<section id="prices" class="prices-section">
+    <h2>Цена</h2>
+    <div class="price-cards">
+        <div class="price-card">
+            <h3>Сайт про вас</h3>
+            <p>От 50 Злотых</p>
+            <ul>
+                <li>1 страница</li>
+                <li>Минималистичность</li>
+            </ul>
+        </div>
+    </div>
+</section>
 
-    <section class="form">
-        <h1>небольшой опрос для вас!</h1>
-        <form action="">
-            <input type="text" placeholder="кто кодер этого чита?">
-            <input type="number" placeholder="в каком году вышел этот чит?">
-            <input type="text" placeholder="на каких серверах работает этот чит?">
-            <input type="text" placeholder="на каком языке програмирования он сделан?">
-        </form>
-        <button class="buttonapply">готово</button>
-        <h1>если вы ответили правильно тогда напишите в наш телеграмм (@bratikok1337) и мы вам выдадим приз!</h1>
-    </section>
+<div class="button-container">
+    <a href="https://t.me/kaosd123" class="telegram-button" target="_blank">Написать в Telegram</a>
+</div>
+
+
+<!-- Кнопка наверх -->
+<button onclick="scrollToTop()" id="scrollTopBtn" title="Наверх">↑</button>
+
+    <footer class="footer-box">
+        <nav>
+            <a href="" class="navigation">Главная</a>
+            <a href="" class="navigation">Тех-поддержка</a>
+            <a href="" class="navigation">Связь с разработчиком</a>
+            <a href="" class="navigation">Заказать сайт</a>
+        </nav>
+    </footer>
+    <script>
+        const toggleBtn = document.getElementById("themeToggleBtn");
+        const body = document.body;
+    
+        toggleBtn.addEventListener("click", () => {
+            body.classList.toggle("dark-theme");
+    
+            // Меняем иконку кнопки
+            toggleBtn.textContent = body.classList.contains("dark-theme") ? "☀️" : "🌙";
+        });
+    </script>
+
 </body>
 </html>
+
