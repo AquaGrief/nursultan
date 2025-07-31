@@ -1,75 +1,330 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Сайты на заказ</title>
-    <link rel="stylesheet" href="./style.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Веб-разработка — быстрые сайты</title>
+<style>
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #121212;
+    color: #f0f0f0;
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  header {
+    background: linear-gradient(90deg, #0066ff, #00ccff);
+    padding: 120px 20px 80px;
+    text-align: center;
+  }
+  header h1 {
+    font-size: 3.8rem;
+    margin: 0 0 20px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  header p {
+    font-size: 1.3rem;
+    margin-bottom: 40px;
+    color: #d4f1ff;
+    font-weight: 500;
+  }
+  .btn-primary {
+    background: #ff6600;
+    color: white;
+    font-weight: 700;
+    font-size: 1.2rem;
+    padding: 18px 60px;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    display: inline-block;
+  }
+  .btn-primary:hover {
+    background: #ff8533;
+  }
+  main {
+    padding: 60px 0 120px;
+    background: #1a1a1a;
+  }
+  .features {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    max-width: 900px;
+    margin: 0 auto 80px;
+  }
+  .feature {
+    background: #252525;
+    border-radius: 15px;
+    padding: 35px 25px;
+    flex: 1;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 204, 255, 0.15);
+    transition: transform 0.3s ease;
+  }
+  .feature:hover {
+    transform: translateY(-12px);
+  }
+  .feature svg {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 20px;
+    fill: #00ccff;
+  }
+  .feature h3 {
+    margin-bottom: 15px;
+    font-size: 1.6rem;
+    color: #00ccff;
+  }
+  .feature p {
+    font-size: 1.05rem;
+    line-height: 1.5;
+    color: #bbb;
+  }
+  .info-section {
+    max-width: 900px;
+    margin: 0 auto 80px;
+    background: #252525;
+    border-radius: 15px;
+    padding: 40px 30px;
+    box-shadow: 0 5px 25px rgba(0, 204, 255, 0.2);
+  }
+  .info-section h2 {
+    color: #00ccff;
+    font-size: 2.2rem;
+    margin-bottom: 25px;
+    font-weight: 700;
+  }
+  .info-section p {
+    font-size: 1.1rem;
+    line-height: 1.65;
+    color: #ccc;
+    margin-bottom: 18px;
+  }
+  .info-section ul {
+    padding-left: 22px;
+    margin-bottom: 20px;
+  }
+  .info-section ul li {
+    margin-bottom: 12px;
+    font-size: 1.05rem;
+    color: #bbb;
+  }
+  footer {
+    background: #111;
+    text-align: center;
+    padding: 30px 20px;
+    color: #666;
+    font-size: 0.9rem;
+  }
+  @media (max-width: 820px) {
+    .features {
+      flex-direction: column;
+    }
+    .feature {
+      margin-bottom: 25px;
+    }
+  }
+
+  nav {
+  background: #111;
+  padding: 20px 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid #222;
+}
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #00ccff;
+}
+.nav-links a {
+  margin-left: 20px;
+  font-size: 1rem;
+  color: #ccc;
+  transition: color 0.3s ease;
+}
+.nav-links a:hover {
+  color: #fff;
+}
+header {
+  margin-top: 80px; /* чтобы контент не перекрывался навбаром */
+}
+
+.pricing-grid {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 40px;
+}
+.price-card {
+  background: #1f1f1f;
+  border-radius: 15px;
+  padding: 30px;
+  width: 260px;
+  box-shadow: 0 5px 15px rgba(0, 204, 255, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+.price-card:hover {
+  transform: translateY(-10px);
+}
+.price-card h3 {
+  font-size: 1.5rem;
+  color: #00ccff;
+  margin-bottom: 10px;
+}
+.price {
+  font-size: 2rem;
+  color: #fff;
+  margin-bottom: 20px;
+}
+.price-card ul {
+  list-style: none;
+  padding: 0;
+}
+.price-card ul li {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  color: #ccc;
+}
+
+
+</style>
 </head>
 <body>
-    <header class="header-box">
-        <nav>
-            <a href="" class="navigation">Главная</a>
-            <a href="" class="navigation">Тех-поддержка</a>
-            <a href="" class="navigation">Связь с разработчиком</a>
-            <a href="" class="navigation">Заказать сайт</a>
-        </nav>
-    </header>
-    <button id="themeToggleBtn" title="Переключить тему">🌙</button>
 
-    <main>
-        <section class="plusi">
-            <h2>Наши плюсы:</h2>
-            <ul>
-                <li><strong>Низкие цены и доступность:</strong> Цены на наши сайты очень доступные, заказать сайт может почти каждый. Стоимость зависит от вашего желания и наполнения веб-сайта.</li>
-                <li><strong>Индивидуальный дизайн:</strong> Мы создаём уникальные дизайны, которые вы не встретите больше нигде.</li>
-                <li><strong>Поддержка почти 24/7:</strong> Отзывчивая и быстрая поддержка, особенно в дневное время. Если вопрос чёткий — вы получите точный и оперативный ответ.</li>
-            </ul>
-        </section>
-    </main>
-<!-- Секция с ценами -->
-<section id="prices" class="prices-section">
-    <h2>Цена</h2>
-    <div class="price-cards">
-        <div class="price-card">
-            <h3>Сайт про вас</h3>
-            <p>От 50 Злотых</p>
-            <ul>
-                <li>1 страница</li>
-                <li>Минималистичность</li>
-            </ul>
-        </div>
+  <nav>
+  <div class="container nav-container">
+    <div class="logo">WebDev</div>
+    <div class="nav-links">
+      <a href="#features">Особенности</a>
+      <a href="#pricing">Цены</a>
+      <a href="#contact">Контакты</a>
     </div>
+  </div>
+</nav>
+
+
+<header>
+  <div class="container">
+    <h1>Быстрая и надёжная веб-разработка</h1>
+    <p>Создаём адаптивные сайты с минимальным кодом и максимальной эффективностью</p>
+    <a href="#features" class="btn-primary">Узнать больше</a>
+  </div>
+</header>
+
+<main>
+  <section class="features container" id="features">
+    <article class="feature">
+      <svg viewBox="0 0 64 64" aria-hidden="true" role="img" focusable="false">
+        <path d="M32 6C18.745 6 8 16.745 8 30s10.745 24 24 24 24-10.745 24-24S45.255 6 32 6zm0 44a20 20 0 1 1 0-40 20 20 0 0 1 0 40z"/>
+        <path d="M44 28H20v4h24v-4z"/>
+      </svg>
+      <h3>Чистый и понятный код</h3>
+      <p>Мы используем семантический HTML и организованный CSS, чтобы ваш сайт был прост в поддержке и масштабировании. Такой код легче читать, исправлять и дополнять.</p>
+    </article>
+    <article class="feature">
+      <svg viewBox="0 0 64 64" aria-hidden="true" role="img" focusable="false">
+        <path d="M52 14H12a4 4 0 0 0-4 4v28a4 4 0 0 0 4 4h40a4 4 0 0 0 4-4V18a4 4 0 0 0-4-4zm-2 28H14V20h36v22z"/>
+        <circle cx="32" cy="34" r="6"/>
+      </svg>
+      <h3>Адаптивность</h3>
+      <p>Ваш сайт будет одинаково хорошо выглядеть и работать на всех устройствах: смартфонах, планшетах и десктопах. Мы используем гибкие сетки и медиа-запросы для этого.</p>
+    </article>
+    <article class="feature">
+      <svg viewBox="0 0 64 64" aria-hidden="true" role="img" focusable="false">
+        <path d="M40 46h-6v6H30v-6h-6v-4h6v-6h4v6h6v4zM32 12a20 20 0 1 0 0 40 20 20 0 0 0 0-40z"/>
+      </svg>
+      <h3>Поддержка и обновления</h3>
+      <p>После запуска сайта мы предлагаем сопровождение и регулярные обновления. Это гарантирует стабильную работу и добавление новых возможностей по мере роста вашего бизнеса.</p>
+    </article>
+  </section>
+
+    <section class="info-section container" id="pricing">
+  <h2>Цены на разработку</h2>
+  <div class="pricing-grid">
+    <div class="price-card">
+      <h3>Standart</h3>
+      <p class="price">от $15</p>
+      <ul>
+        <li>Ссылка на страницу</li>
+        <li>Обновления по запросам</li>
+      </ul>
+    </div>
+    <div class="price-card">
+      <h3>Pro</h3>
+      <p class="price">от $20</p>
+      <ul>
+        <li>Ссылка на страницу</li>
+        <li>Обновления по запросам</li>
+        <li>Исходный код страницы</li>
+      </ul>
+    </div>
+  </div>
 </section>
 
-<div class="button-container">
-    <a href="https://t.me/kaosd123" class="telegram-button" target="_blank">Написать в Telegram</a>
-</div>
+  <section class="info-section container">
+    <h2>Почему важно выбирать профессиональную веб-разработку?</h2>
+    <p>В современном мире сайт — это лицо бизнеса. Он должен быть не только красивым, но и функциональным, быстрым и безопасным. Профессиональная разработка обеспечивает:</p>
+    <ul>
+      <li>Быструю загрузку страниц, что повышает удобство и рейтинг в поисковиках.</li>
+      <li>Корректное отображение на всех устройствах — мобильных, планшетах и ПК.</li>
+      <li>Безопасность данных пользователей и вашего бизнеса.</li>
+      <li>Гибкость для дальнейшего расширения и внедрения новых функций.</li>
+    </ul>
+    <p>Это инвестиция, которая окупается за счёт роста клиентов и повышения доверия.</p>
+  </section>
 
+  <section class="info-section container">
+    <h2>Какие технологии мы используем?</h2>
+    <p>Основу наших проектов составляют современные стандарты веб-разработки:</p>
+    <ul>
+      <li><strong>HTML5</strong> — структурируем контент и обеспечиваем доступность.</li>
+      <li><strong>CSS3</strong> — стилизуем сайт, создаём анимации и адаптивность.</li>
+      <li><strong>JavaScript</strong> — добавляем интерактивные элементы (минимально, чтобы не перегружать).</li>
+      <li><strong>Адаптивный дизайн</strong> — с помощью flexbox, grid и медиа-запросов.</li>
+      <li><strong>Оптимизация</strong> — минимизация кода и ускорение загрузки.</li>
+    </ul>
+    <p>Это помогает создавать быстрые и удобные сайты, которые легко поддерживать.</p>
+  </section>
 
-<!-- Кнопка наверх -->
-<button onclick="scrollToTop()" id="scrollTopBtn" title="Наверх">↑</button>
+  <section class="info-section container">
+    <h2>Этапы работы над вашим сайтом</h2>
+    <p>Мы предлагаем прозрачный и понятный процесс разработки, чтобы вы всегда знали, что происходит:</p>
+    <ul>
+      <li><strong>Обсуждение целей:</strong> определяем задачи и функционал сайта.</li>
+      <li><strong>Прототипирование:</strong> создаём макеты и обсуждаем дизайн.</li>
+      <li><strong>Верстка:</strong> пишем чистый и адаптивный код.</li>
+      <li><strong>Тестирование:</strong> проверяем работу на разных устройствах и браузерах.</li>
+      <li><strong>Запуск:</strong> публикуем сайт в интернете.</li>
+      <li><strong>Поддержка:</strong> обновляем и улучшаем проект по мере необходимости.</li>
+    </ul>
+  </section>
 
-    <footer class="footer-box">
-        <nav>
-            <a href="" class="navigation">Главная</a>
-            <a href="" class="navigation">Тех-поддержка</a>
-            <a href="" class="navigation">Связь с разработчиком</a>
-            <a href="" class="navigation">Заказать сайт</a>
-        </nav>
-    </footer>
-    <script>
-        const toggleBtn = document.getElementById("themeToggleBtn");
-        const body = document.body;
-    
-        toggleBtn.addEventListener("click", () => {
-            body.classList.toggle("dark-theme");
-    
-            // Меняем иконку кнопки
-            toggleBtn.textContent = body.classList.contains("dark-theme") ? "☀️" : "🌙";
-        });
-    </script>
+</main>
 
-</body>
-</html>
-
+<footer>
+  &copy; 2025 Веб-разработка. Все права защищ
